@@ -20,8 +20,27 @@ https://trello.com/b/Aes1fVF8/project-1
 
 
 <figure>
+	<figcaption>Wireframe 1</figcaption>
   <img src="images/pg1.JPG" alt="Wireframe 1">
   <br>
-  <figcaption>Wireframe 1</figcaption>
+</figure>
+
+<figure>
+	<figcaption>Wireframe 2</figcaption>
+  <img src="images/pg2.JPG" alt="Wireframe 2">
+  <br>
+</figure>
+
+<figure>
+	<figcaption>Wireframe 3</figcaption>
+  <img src="images/pg3.JPG" alt="Wireframe 3">
+  <br>
+</figure>
+
+
+<figure>
+	<figcaption>Wireframe 4</figcaption>
+  <img src="images/pg4.JPG" alt="Wireframe 4">
+  <br>
 </figure>
 
