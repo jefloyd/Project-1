@@ -6,19 +6,18 @@
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-	<div id="title">
-				<!-- wrapped h1 grid race in div for easier manipulation -->
-				<h1>Wiz Kid</h1> 
-	</div>		
-			
-			<div id="quiz"></div>
+	<body>
 
+		<h1>Wiz Kid</h1>
+		<div class="container">
+			<div class="quiz-container">
+			  <div id="quiz"></div>
+			</div>
+			<button id="previous">Previous Question</button>
+			<button id="next">Next Question</button>
 			<button id="submit">Submit Quiz</button>
 			<div id="results"></div>
-
-
-
+		</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="app.js"></script>	
 </body>
