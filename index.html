@@ -5,19 +5,26 @@
 	<title>Wiz Kid</title>
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 </head>
 	<body>
 
 		<h1>Wiz Kid</h1>
-		<div class="container">
-			<div class="quiz-container">
-			  <div id="quiz"></div>
-			</div>
-			<button id="previous">Previous Question</button>
-			<button id="next">Next Question</button>
-			<button id="submit">Submit Quiz</button>
-			<div id="results"></div>
-		</div>
+
+	<form id = "quiz" name = "quiz">
+
+		
+	<p> What is the closest planet to the sun?</p>
+	<input id="textbox" type="text" name="question1">
+
+	<p>Who was the first president of The United States?</p>
+	<input type = "radio" id= "mc" name = "question2" value ="Benjamin Franklin">Benjamin Franklin<br>
+	<input type = "radio" id= "mc" name = "question2" value ="George Washington">George Washington<br>
+	<input type = "radio" id= "mc" name = "question2" value ="Abraham Lincoln">Abraham Lincoln<br>
+	<input type = "radio" id= "mc" name = "question2" value ="None of these">None of these<br>
+
+	</form>
+		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="app.js"></script>	
 </body>
@@ -25,3 +32,12 @@
 
 
 
+<!-- <div class="container">
+			<div class="quiz-container">
+			  <div id="quiz"></div>
+			</div>
+			<button id="previous">Previous Question</button>
+			<button id="next">Next Question</button>
+			<button id="submit">Submit Quiz</button>
+			<div id="results"></div>
+		</div> -->

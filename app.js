@@ -173,29 +173,38 @@ function buildQuiz(){
 
 function showResults(){
 
-const answerContainer = quizContainer.querySelectorAll('.answers'); //gathers answer containers from quiz
+  // gather answer containers from our quiz
+  const answerContainers = quizContainer.querySelectorAll('.answers');
 
-let numCorrect = 0; //keep track of users's answers
+  // keep track of user's answers
+  let numCorrect = 0;
 
-myQuestions.forEach( (currentQuestion, questionNumber) => {
+  // for each question...
+  myQuestions.forEach( (currentQuestion, questionNumber) => {
 
-	const answerContainer = answerContainers[questionNumber];
-	const selector = `input[name=question${questionNumber}]:checked`;
-	const userAnswer = (answerContainers.querySelectorAll(selector) || {}).value;
+    // find selected answer
+    const answerContainer = answerContainers[questionNumber];
+    const selector = 'input[name=question'+questionNumber+']:checked';
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-	//if answer is correct
-	if(userAnswer===currentQuestion.correctAnswer){
-		//add to the number of correct answers
-		numCorrect++;
+    // if answer is correct
+    if(userAnswer===currentQuestion.correctAnswer){
+      // add to the number of correct answers
+      numCorrect++;
 
-		answerContainers[questionNumber].style.color = 'lightgreen';
-	}
+      // color the answers green
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    }
+    // if answer is wrong or blank
+    else{
+      // color the answers red
+      answerContainers[questionNumber].style.color = 'red';
+    }
+  });
 
-	else {
-		answerContainers[questionNumber].style.color= 'red';
-	
+  // show number of correct answers out of total
+  resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
 }
-});
 
-resultsContainer.innerHTML=numCorrect + ' out of ' + myQuestions.length;
-}
+
+
