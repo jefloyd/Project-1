@@ -5,22 +5,80 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 
 	function showQuestions(questions, quizContainer){
-		//code in here
+		var output = [];
+		var answers;
 
-	}
+		//for each question - need a for loop
+		for(var i=0; i<questions.length; i++){
+
+
+			answers= [];
+
+			for(letter in questions[i].answers){
+
+				answers.push(
+					'<label>' 
+						+ '<input type ="radio" name="questions'+i+'" value ="'+letter+'">'
+						+ letter + ': '
+						+ questions[i].answers[letter]
+					+'</label>'
+
+					);//end of answer .push
+
+			} // end of for(letter...)
+
+			output.push(
+				'<div class="question">' + questions[i].questions + '</div>'
+				+ '<div class ="answers">' + answers.join('') + '</div>'
+				);
+
+		} //end of for loop 
+
+		quizContainer.innerHTML = output.join('');
+	}//end of function showQuestions
+	showQuestions(questions,quizContainer);
 
 	function showResults(questions, quizContainer, resultsContainer){
-		//code in here
+		
+		var answerContainers = quizContainer.querySelectorAll('.answers');
 
-	}
+		//to keep track of user's answers
+		var userAnswer = '';
+		var numCorrect = 0;
+
+		//for each question - need to run a for loop
+		for(var i=0; i<questions.length; i++){
+
+			//finds the selected answer
+			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+
+			//if answer is correct
+			if(userAnswer===questions[i].correctAnswer){
+				//add to the number of correct answers
+				numCorrect++;
+
+				answerContainers[i].style.color = 'lightgreen';
+
+			}
+			else{
+				answerContainers[i].style.color = 'red';
+			}
+
+		}//end of for loop
+
+		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+
+
+	}//end of function showResults
 
 
 	showQuestions(questions, quizContainer);
 
 	submitButton.onClick = function(){
 		showResults(questions, quizContainer, resultsContainer);
-	}
-}
+	}//end of submitButton.onClick
+
+}//end of funtion generateQuiz
 
 
 
@@ -111,7 +169,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 		
 	},
 	{
-		question: "What is the fastest animal in the world?",
+		question: "The fastest animal on land is the...?",
 		answers:{
 			a: "Jaguar",
 			b: "Cheetah",
@@ -138,9 +196,9 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 
 
+/*
 
-
-/*(function() {
+(function() {
   function buildQuiz() {
     // we'll need a place to store the HTML output
     const output = [];
@@ -326,4 +384,3 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 })();
 
 */
-
