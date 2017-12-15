@@ -94,16 +94,7 @@ var myQuestions = [
 		correctAnswer: "b"
 		
 	},
-	{
-		question: "True or false? This quiz was awesome!",
-		answers:{
-			a: "True",
-			b: "False",
-			
-		},
-		correctAnswer: "a"
-		
-	}
+	
 
 ];
 
@@ -117,55 +108,61 @@ generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
     function showQuestions(questions, quizContainer){
-        // we'll need a place to store the output and the answer choices
+        // place to store the output and the answer choices
         var output = [];
         var answers;
 
         // for each question...
-        for(var i=0; i<questions.length; i++){
+        for(var i=0; i<questions.length; i++){ //
             
-            // first reset the list of answers
+            // reset the list of answers
             answers = [];
 
             // for each available answer...
-            for(letter in questions[i].answers){
+            for(letter in questions[i].answers){ //this adds a radio button with the answers for each question
 
                 // ...add an html radio button
                 answers.push(
                     '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        + '<input type="radio" name="question'+i+'" value="'+letter+'">' 
+
                         + letter + ': '
                         + questions[i].answers[letter]
                     + '</label>'
                 );
+
+                answers.onclick = function(){  //this does nothing yet - hoping to get questions to generate one at a time
+                	quizContainer.innerHTML = "";
+
+                }
             }
 
             // add this question and its answers to the output
             output.push(
-                '<div class="question">' + questions[i].question + '</div>'
+                '<div class="question">' + questions[i].question + '</div>' //this stores the answers selected
                 + '<div class="answers">' + answers.join('') + '</div>'
             );
         }
 
-        // finally combine our output list into one string of html and put it on the page
-        quizContainer.innerHTML = output.join('');
+        // combines our output list into one string of html and puts it on the page
+        quizContainer.innerHTML = output.join(''); 
     }
 
 
-    function showResults(questions, quizContainer, resultsContainer){
+    function showResults(questions, quizContainer, resultsContainer){  //
         
-        // gather answer containers from our quiz
-        var answerContainers = quizContainer.querySelectorAll('.answers');
+       
+        var answerContainers = quizContainer.querySelectorAll('.answers'); //selects the stored answers from the quiz from the answers var
         
         // keep track of user's answers
-        var userAnswer = '';
-        var numCorrect = 0;
+        var userAnswer = ''; //keeps track of which answer the user selected
+        var numCorrect = 0; //keeps track of if the user was right or wrong
         
-        // for each question...
-        for(var i=0; i<questions.length; i++){
+        
+        for(var i=0; i<questions.length; i++){//for loop iterates over the  questions answers
 
             // find selected answer
-            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;  //
             
             // if answer is correct
             if(userAnswer===questions[i].correctAnswer){
