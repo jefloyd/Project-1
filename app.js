@@ -1,4 +1,5 @@
 
+//audio added
 var audio = new Audio('audio/theme.mp3');
 audio.play();
 
