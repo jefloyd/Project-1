@@ -121,7 +121,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
             // for each available answer...
             for(letter in questions[i].answers){ //this adds a radio button with the answers for each question
 
-                // ...add an html radio button
+                // ...adds an html radio button
                 answers.push(
                     '<label>'
                         + '<input type="radio" name="question'+i+'" value="'+letter+'">' 
@@ -149,7 +149,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     }
 
 
-    function showResults(questions, quizContainer, resultsContainer){  //
+    function showResults(questions, quizContainer, resultsContainer){  //creating function with attached parameters
         
        
         var answerContainers = quizContainer.querySelectorAll('.answers'); //selects the stored answers from the quiz from the answers var
