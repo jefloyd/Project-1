@@ -1,4 +1,7 @@
 
+var audio = new Audio(audio/'theme.mp3');
+audio.play();
+
 var myQuestions = [
 	{
 		question: "Who was the first President of the United States?",
@@ -192,4 +195,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     }
 
 }
+
+
 
