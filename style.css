@@ -12,14 +12,10 @@ html{
 	background: ;
 }
 
-h1{
-	color: red;
-	text-align: center;
-	margin: -5px;
-}
 
 .question{
 	font-weight: 600;
+	margin-top: 25px;
 }
 
 .answers{

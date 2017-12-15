@@ -1,5 +1,5 @@
 
-var audio = new Audio(audio/'theme.mp3');
+var audio = new Audio('audio/theme.mp3');
 audio.play();
 
 var myQuestions = [
