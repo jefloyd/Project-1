@@ -1,7 +1,6 @@
-
-//audio added
-var audio = new Audio('audio/theme.mp3');
-audio.play();
+// //audio added
+// var audio = new Audio('audio/theme.mp3');
+// audio.play();
 
 var myQuestions = [
 	{
@@ -196,6 +195,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     }
 
 }
+
+
 
 
 
