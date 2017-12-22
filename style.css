@@ -69,13 +69,15 @@ html{
 	background: red;
 }
 
+
+/*added webkit to make background image fit*/
 .container{
 	background-image: url(images/background.jpg);
 	position: relative;
 	background-position: center center;
   	background-repeat: no-repeat;
   	background-size: cover;
-  	  -webkit-background-size: cover;
+  	  -webkit-background-size: cover; 
   -moz-background-size: cover;
   -o-background-size: cover;
   /*	width: 100vh;*/
